@@ -24,3 +24,5 @@ dist-ssr
 *.sw?
 
 README-template.md
+CLAUDE.md
+AGENTS.md
