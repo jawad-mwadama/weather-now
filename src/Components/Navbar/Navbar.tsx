@@ -1,5 +1,6 @@
 import React from "react";
 import logo from "../../assets/images/logo.svg";
+import iconUnits from "../../assets/images/icon-units.svg";
 
 function Navbar() {
   return (
@@ -9,13 +10,9 @@ function Navbar() {
         <img src={logo} alt="logo" />
 
         {/* units */}
-        <div className="font-body text-white">
-          <select className="rounded-lg bg-blue-500" name="cars" id="cars">
-            <option value="volvo">Volvo</option>
-            <option value="saab">Saab</option>
-            <option value="mercedes">Mercedes</option>
-            <option value="audi">Audi</option>
-          </select>
+        <div className="flex items-center gap-2 rounded-lg bg-neutral-700 px-4 py-2 font-body text-white">
+          <img src={iconUnits} alt="" />
+          <span>units</span>
         </div>
       </div>
     </nav>
