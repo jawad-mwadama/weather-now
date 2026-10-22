@@ -1,6 +1,7 @@
 import React from "react";
 import logo from "../../assets/images/logo.svg";
 import iconUnits from "../../assets/images/icon-units.svg";
+import iconDropdown from "../../assets/images/icon-dropdown.svg";
 
 function Navbar() {
   return (
@@ -10,9 +11,10 @@ function Navbar() {
         <img src={logo} alt="logo" />
 
         {/* units */}
-        <div className="flex items-center gap-2 rounded-lg bg-neutral-700 px-4 py-2 font-body text-white">
-          <img src={iconUnits} alt="" />
+        <div className="hover flex cursor-pointer items-center gap-2 rounded-lg bg-neutral-700 px-4 py-2 font-body text-white">
+          <img src={iconUnits} alt="icon units" />
           <span>units</span>
+          <img src={iconDropdown} alt="icon dropdown" />
         </div>
       </div>
     </nav>
