@@ -1,4 +1,3 @@
-import React from "react";
 import logo from "../../assets/images/logo.svg";
 import iconUnits from "../../assets/images/icon-units.svg";
 import iconDropdown from "../../assets/images/icon-dropdown.svg";
