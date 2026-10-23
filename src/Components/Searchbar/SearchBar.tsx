@@ -1,6 +1,6 @@
 function SearchBar() {
   return (
-    <div className="flex items-center justify-center gap-5 py-7">
+    <div className="flex items-center justify-center gap-4 py-3">
       <input
         type="search"
         placeholder="Search for a place"

@@ -6,7 +6,7 @@ import iconDropdown from "../../assets/images/icon-dropdown.svg";
 function Navbar() {
   return (
     <nav className="p-7">
-      <div className="flex justify-between py-5">
+      <div className="flex justify-between py-1">
         {/* logo */}
         <img src={logo} alt="logo" />
 
