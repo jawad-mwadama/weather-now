@@ -1,7 +1,7 @@
 interface Api {
   lat: string;
   lon: string;
-  units?: "metric";
+  units?: "metric" | "imperial";
 }
 
 const fetchWeatherData = async ({
@@ -9,8 +9,8 @@ const fetchWeatherData = async ({
   lon,
   units = "metric",
 }: Api): Promise<any> => {
-  const tempUnit = units === "metric" ? "celcius" : "fahrenheit";
-  const windUnit = units === "metric" ? "kph" : "mph";
+  const tempUnit = units === "metric" ? "celsius" : "fahrenheit";
+  const windUnit = units === "metric" ? "kmh" : "mph";
   const precipUnit = units === "metric" ? "mm" : "inch";
 
   const url =
