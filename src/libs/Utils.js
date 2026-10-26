@@ -1,7 +1,10 @@
-//@ts-nocheck
 
 
 // weather data fetch
+/**
+ * @param {{ lat: number, lon: number, units?: "metric" | "imperial" }} params
+ * @returns {Promise<any>}
+ */
 export const fetchWeatherData = async ({
   lat,
   lon,
@@ -37,8 +40,12 @@ export const fetchWeatherData = async ({
 
 
 // fetch location data
+/**
+ * @param {string} query
+ * @returns {Promise<{ name: string, country: string, latitude: number, longitude: number }[]>}
+ */
 export const fetchLocationData = async (query) => {
-  const url = `https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(query)}count=10&language=en&format=json`;
+  const url = `https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(query)}&count=10&language=en&format=json`;
   const response= await fetch (url);
 
   if (!response.ok){
@@ -49,7 +56,11 @@ export const fetchLocationData = async (query) => {
   return data.results || []
 };
 
-// format date for display
+// format date for display\
+/**
+ * @param {Date} date
+ * @returns {string}
+ */
 export const formatDate=(date)=>{
   const options = {
     weekday:"long",
@@ -63,27 +74,48 @@ export const formatDate=(date)=>{
 
 
 // get day name for forecast
+/**
+ * @param {string} dateString
+ * @returns {string}
+ */
 export const getDayName=(dateString)=>{
   const date = new Date(dateString)
   return date.toLocaleDateString("en-US",{"weekday":"long"})
 }
 
 // get temparature unit symbol
+/**
+ * @param {"metric" | "imperial"} units
+ * @returns {string}
+ */
 export const getTemparatureUnit=(units)=>{
-  return units === "metrics" ? "°C" : "°F"
+  return units === "metric" ? "°C" : "°F"
 }
 
 // get WindSpeed unit
+/**
+ * @param {"metric" | "imperial"} units
+ * @returns {string}
+ */
 export const getWindSpeedUnit=(units)=>{
-  return units === "metrics" ? "km/h" : "mph"
+  return units === "metric" ? "km/h" : "mph"
 }
 
 // get PrecipitationUnit
+/**
+ * @param {"metric" | "imperial"} units
+ * @returns {string}
+ */
 export const getPrecipitationUnit=(units)=>{
-  return units === "metrics" ? "mm" : "in"
+  return units === "metric" ? "mm" : "in"
 }
 
 // get WMO code descriptions
+/**
+ * @param {number} code
+ * @returns {string}
+ */
+
 export const getWeatherDescription = (code) => {
   const descriptions = {
     0: "Clear sky",

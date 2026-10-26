@@ -58,7 +58,7 @@ function App() {
       const locationData: LocationData[] = await fetchLocationData(searchTerm);
       setSearchResults(locationData);
 
-      if (location.length > 0) {
+      if (locationData.length > 0) {
         setShowSearchResults(true);
       }
     } catch (error: unknown) {
@@ -70,7 +70,7 @@ function App() {
 
   const handleLocationSelect = (locationData: LocationData): void => {
     const newLocation: Location = {
-      name: `${locationData.name}, ${fetchLocationData.country}`,
+      name: `${locationData.name}, ${locationData.country}`,
       lat: locationData.latitude,
       lon: locationData.longitude,
     };
@@ -88,11 +88,11 @@ function App() {
     }
 
     try {
-      const data: WeatherData = await fetchWeatherData(
-        location.lat,
-        location.lon,
+      const data: WeatherData = await fetchWeatherData({
+        lat: location.lat,
+        lon: location.lon,
         units,
-      );
+      });
       setWeatherData(data);
     } catch (error: unknown) {
       console.error("Error fetching weather data:", error);
