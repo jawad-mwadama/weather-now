@@ -11,7 +11,7 @@ export const fetchWeatherData = async ({
   units = "metric",
 }) => {
   const tempUnit = units === "metric" ? "celsius" : "fahrenheit";
-  const windUnit = units === "metric" ? "kmh" : "mph";
+  const windUnit = units === "metric" ? "km/h" : "mp/h";
   const precipUnit = units === "metric" ? "mm" : "inch";
 
   const url =
@@ -88,7 +88,7 @@ export const getDayName=(dateString)=>{
  * @param {"metric" | "imperial"} units
  * @returns {string}
  */
-export const getTemparatureUnit=(units)=>{
+export const getTemperatureUnit=(units)=>{
   return units === "metric" ? "°C" : "°F"
 }
 

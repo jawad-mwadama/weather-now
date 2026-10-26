@@ -1,34 +1,27 @@
-// import rainy from "../../assets/images/icon-rain.webp";
-import bgLarger from "../../assets/images/bg-today-large.svg";
 import { formatDate } from "../../libs/Utils";
 import WeatherIcon from "../WeatherIcon/WeatherIcon";
 
-function CurrentWeather({ data, location }) {
+export default function CurrentWeather({ data, location }) {
   if (!data) return null;
 
-  const currentTemp = Math.round(data.current.temparature_2m);
+  const currentTemp = Math.round(data.current.temperature_2m);
   const weatherCode = data.current.weather_code;
-  return (
-    <div className="relative w-full">
-      <img src={bgLarger} alt="large bg" className="block h-72 w-full" />
 
-      <div className="absolute inset-0 flex items-center justify-between px-8">
-        {/* City and date on the left */}
-        <div className="flex flex-col">
-          <h1 className="font-heading text-2xl font-bold">{location.name}</h1>
-          <span className="text-sm">{formatDate(new Date())}</span>
+  return (
+    <div className="weather-bg relative overflow-hidden rounded-2xl px-6 py-24">
+      <div className="relative z-10 flex flex-col items-center justify-between sm:flex-row">
+        <div className="mb-4">
+          <p className="mb-2 text-2xl font-bold text-white">{location.name}</p>
+          <p className="text-base text-blue-100">{formatDate(new Date())}</p>
         </div>
 
-        {/* Weather icon next to temperature on the right */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center space-x-4">
           <WeatherIcon code={weatherCode} size="large" />
-          <span className="font-heading text-8xl font-bold italic">
+          <div className="text-shadow ml-8 text-8xl font-bold text-white italic">
             {currentTemp}&deg;
-          </span>
+          </div>
         </div>
       </div>
     </div>
   );
 }
-
-export default CurrentWeather;
