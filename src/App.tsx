@@ -3,7 +3,7 @@ import Navbar from "./Components/Navbar/Navbar";
 import SearchBar from "./Components/Searchbar/SearchBar";
 import CurrentWeather from "./Components/CurrentWeather/CurrentWeather";
 import Metrics from "./Components/Metrics/Metrics";
-import DailyForecast from "./Components/DailyForecast/DailyForecast";
+// import DailyForecast from "./Components/DailyForecast/DailyForecast";
 import HourlyForecast from "./Components/HourlyForecast/HourlyForecast";
 import { useEffect, useState } from "react";
 import { fetchLocationData, fetchWeatherData } from "./libs/Utils";
@@ -138,12 +138,12 @@ function App() {
             <Metrics data={weatherData} units={units} loading={loading} />
 
             {/* Daily forecast */}
-            <DailyForecast
+            {/* <DailyForecast
               data={weatherData}
               onDaySelect={setSelectedDay}
               selectedDay={selectedDay}
               loading={loading}
-            />
+            /> */}
           </div>
 
           {/* Right column: Hourly forecast */}
