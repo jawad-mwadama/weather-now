@@ -11,7 +11,7 @@ export const fetchWeatherData = async ({
   units = "metric",
 }) => {
   const tempUnit = units === "metric" ? "celsius" : "fahrenheit";
-  const windUnit = units === "metric" ? "km/h" : "mp/h";
+  const windUnit = units === "metric" ? "kmh" : "mph";
   const precipUnit = units === "metric" ? "mm" : "inch";
 
   const url =

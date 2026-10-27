@@ -57,7 +57,7 @@ function SearchBar({
             value={searchTerm}
             onChange={handleInputChange}
             placeholder="Search for a place..."
-            className="glass-card w-full rounded-lg py-3 pr-4 pl-10 text-white placeholder-gray-300 transition-all duration-200 focus:ring-2 focus:ring-white focus:outline-none"
+            className="w-full rounded-lg bg-neutral-600 py-3 pr-4 pl-10 text-white placeholder-gray-300 transition-all duration-200 focus:ring-2 focus:ring-white focus:outline-none"
             disabled={loading}
           />
 
@@ -71,7 +71,7 @@ function SearchBar({
         <button
           type="submit"
           disabled={loading || !searchTerm.trim()}
-          className="rounded-lg bg-blue-600 px-6 py-3 font-medium transition-all duration-200 hover:bg-blue-700 focus:ring-2 focus:ring-white focus:outline-none disabled:cursor-not-allowed disabled:bg-gray-600"
+          className="rounded-lg bg-blue-600 px-6 py-3 font-medium text-white transition-all duration-200 hover:bg-blue-700 focus:ring-2 focus:ring-white focus:outline-none disabled:cursor-not-allowed disabled:bg-gray-600"
         >
           {loading ? "Searching..." : "Search"}
         </button>
@@ -89,7 +89,7 @@ function SearchBar({
 
       {/* Search results */}
       {showSearchResults && searchResults.length > 0 && (
-        <div className="glass-card absolute top-full right-0 left-0 z-50 mt-2 max-h-60 overflow-y-auto rounded-lg shadow-lg">
+        <div className="absolute top-full right-0 left-0 z-50 mt-2 max-h-60 overflow-y-auto rounded-lg bg-neutral-700 shadow-lg">
           {searchResults.map((result, index) => (
             <button
               key={`${result.name}-${result.country}-${index}`}
